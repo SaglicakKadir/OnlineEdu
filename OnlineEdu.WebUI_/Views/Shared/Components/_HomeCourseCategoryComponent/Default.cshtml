@@ -21,7 +21,7 @@
                     </div>
                     <div class="cat-cap">
                         <h5><a href="#">@item.CategoryName</a></h5>
-                        <p>@item.Description</p>
+                        <p>@(item.Description.Length>100 ? item.Description.Substring(0,100): item.Description)</p>
                         <a href="#" class="read-more1">Kursları İncele></a>
                     </div>
                 </div>
