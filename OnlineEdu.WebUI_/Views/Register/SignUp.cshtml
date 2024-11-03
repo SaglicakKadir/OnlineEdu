@@ -1,6 +1,6 @@
 ﻿@model UserRegisterDto
 @{
-    Layout = null;
+    Layout = "~/Views/UILayout/Layout.cshtml";
 }
 
 
@@ -66,21 +66,10 @@
                                     <label for="password">Tekrar Şifre</label>
                                     <input type="password" asp-for="ConfirmPassword" class="form-control" id="password">
                                 </div>
-                                <input type="submit" value="Kayıt Ol" class="btn btn-block btn-primary">
-
-                                <span class="d-block text-left my-4 text-muted">&mdash; or login with &mdash;</span>
-
-                                <div class="social-login">
-                                    <a href="#" class="facebook">
-                                        <span class="icon-facebook mr-3"></span>
-                                    </a>
-                                    <a href="#" class="twitter">
-                                        <span class="icon-twitter mr-3"></span>
-                                    </a>
-                                    <a href="#" class="google">
-                                        <span class="icon-google mr-3"></span>
-                                    </a>
-                                </div>
+                                <p style="color:red">
+                                    @Html.ValidationSummary()
+                                </p>
+                                <input type="submit" value="Kayıt Ol" class="btn btn-block btn-primary">                           
                             </form>
                         </div>
                     </div>
