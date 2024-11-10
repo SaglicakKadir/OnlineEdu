@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using OnlineEdu.Entity.Entities;
 using OnlineEdu.WebUI_.DTOs.UserDtos;
 
 namespace OnlineEdu.WebUI_.Services.UserServices
@@ -9,6 +10,8 @@ namespace OnlineEdu.WebUI_.Services.UserServices
         Task<string> LoginAsync(UserLoginDto userLoginDto);
         Task<bool> LogoutAsync();
         Task<bool> CreateRoleAsync(UserRoleDto userRoleDto);
-        Task<bool> AssignRoleAsync(AssignRoleDto assignRoleDto);
+        Task<bool> AssignRoleAsync(List<AssignRoleDto> assignRoleDto);
+        Task<List<AppUser>> GetAllUserAsync();
+        Task<AppUser> GetUserByIdAsync(int id);
     }
 }

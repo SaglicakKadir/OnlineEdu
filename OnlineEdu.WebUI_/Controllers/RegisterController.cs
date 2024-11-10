@@ -22,7 +22,7 @@ namespace OnlineEdu.WebUI_.Controllers
                 }
                 return View();
             }
-            return RedirectToAction("Index", "Login");
+            return RedirectToAction("SignIn", "Login");
         }
     }
 }

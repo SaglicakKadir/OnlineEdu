@@ -1,0 +1,38 @@
+﻿@model List<ResultCourseDto>
+@{
+    ViewData["Title"] = "Kurslarım";
+    Layout = "~/Areas/Teacher/Views/TeacherLayout/Index.cshtml";
+}
+
+
+@{
+    int count = 0;
+}
+<table class="table table-hover">
+    <tr>
+        <th>#</th>
+        <th>Resim</th>
+        <th>Kurs Adı</th>
+        <th>Fiyat</th>
+        <th>Kategori</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <th><img src="@item.ImageUrl" style="75px;width:75px" /></th>
+            <td>@item.CourseName</td>
+            <td>@item.Price $</td>
+            <td>@item.CourseCategoryId</td>
+            <td>
+                @*  <button onclick="DeleteCourse(@item.CourseId)" class="btn btn btn-outline-danger">Sil</button> *@
+                <a asp-action="DeleteTeacherCourse" asp-controller="MyCourse" asp-area="Teacher" asp-route-id="@item.CourseId" class="btn btn-outline-danger">Sil</a>
+                <a asp-action="UpdateCourse" asp-controller="MyCourse" asp-area="Teacher" asp-route-id="@item.CourseId" class="btn btn-outline-info">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<a asp-action="CreateCourse" asp-controller="MyCourse" asp-area="Teacher" class="btn btn-outline-primary">Yeni Kurs Ekle</a>
