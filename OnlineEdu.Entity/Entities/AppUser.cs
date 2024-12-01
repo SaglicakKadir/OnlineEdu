@@ -14,5 +14,6 @@ namespace OnlineEdu.Entity.Entities
         public string? ImageURL { get; set; }
         public List<Course> Courses { get; set; } //her bir kişinin birden fazla kursu olabilir
         public List<CourseRegister> CourseRegisters { get; set; } //her bir kişinin birden fazla kursu olabilir
+        public List<Blog> Blogs { get; set; }
     }
 }
